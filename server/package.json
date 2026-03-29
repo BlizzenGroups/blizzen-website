@@ -1,0 +1,57 @@
+{
+  "name": "blizzen-backend",
+  "version": "1.0.0",
+  "description": "Blizzen Creations Backend API Server",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js",
+    "build": "echo 'No build needed for backend only'",
+    "seed:courses": "node seeds/courses-seed.js",
+    "seed:courses:v2": "node seeds/courses-seed-v2.js",
+    "seed:placements": "node seeds/placements-seed.js",
+    "seed:real-placements": "node seeds/real-placements-seed.js",
+    "seed:simple-placements": "node seeds/simplified-placements-seed.js",
+    "seed:placement-stats": "node seeds/placement-stats-seed.js",
+    "seed:contact": "node seeds/contact-seed.js",
+    "seed:about": "node seeds/about-seed.js",
+    "seed:home": "node seeds/home-seed.js",
+    "seed:trust-stats": "node seeds/trust-stats-seed.js",
+    "seed:all": "npm run seed:courses:v2 && npm run seed:simple-placements && npm run seed:placement-stats && npm run seed:contact && npm run seed:about && npm run seed:home && npm run seed:trust-stats",
+    "test:endpoints": "node test-endpoints.js"
+  },
+  "keywords": [
+    "blizzen",
+    "creations",
+    "education",
+    "backend",
+    "api",
+    "express",
+    "mongodb"
+  ],
+  "author": "Blizzen Creations",
+  "license": "Proprietary",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "cloudinary": "^1.41.3",
+    "cors": "^2.8.6",
+    "dompurify": "^3.3.0",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^8.22.0",
+    "multer": "^1.4.5-lts.1",
+    "multer-storage-cloudinary": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/dompurify": "^3.0.5",
+    "@types/node": "^22.16.5",
+    "nodemon": "^3.1.11",
+    "serve": "^14.2.5"
+  }
+}

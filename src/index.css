@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 150 30% 96%;
+    --foreground: 168 33% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 168 33% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 168 33% 12%;
+
+    --primary: 168 64% 25%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 165 30% 90%;
+    --secondary-foreground: 168 33% 12%;
+
+    --muted: 165 25% 93%;
+    --muted-foreground: 168 15% 42%;
+
+    --accent: 36 72% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 165 25% 85%;
+    --input: 165 25% 85%;
+    --ring: 168 64% 25%;
+
+    --radius: 0.75rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(168 64% 25%) 0%, hsl(168 50% 35%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(168 64% 25%) 0%, hsl(36 72% 50%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(165 25% 97%) 100%);
+
+    --shadow-sm: 0 2px 8px hsl(168 64% 25% / 0.08);
+    --shadow-md: 0 4px 16px hsl(168 64% 25% / 0.12);
+    --shadow-lg: 0 8px 32px hsl(168 64% 25% / 0.16);
+    --shadow-glow: 0 0 40px hsl(168 64% 25% / 0.25);
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 168 30% 8%;
+    --foreground: 0 0% 97%;
+
+    --card: 168 28% 11%;
+    --card-foreground: 0 0% 97%;
+
+    --popover: 168 28% 11%;
+    --popover-foreground: 0 0% 97%;
+
+    --primary: 168 55% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 168 28% 16%;
+    --secondary-foreground: 0 0% 97%;
+
+    --muted: 168 28% 16%;
+    --muted-foreground: 168 15% 60%;
+
+    --accent: 36 72% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 168 28% 18%;
+    --input: 168 28% 18%;
+    --ring: 168 55% 42%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 17px;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  h1 { font-size: 2.8rem; font-weight: 900; line-height: 1.1; }
+h2 { font-size: 2.2rem; font-weight: 800; line-height: 1.2; }
+h3 { font-size: 1.7rem; font-weight: 700; line-height: 1.3; }
+h4 { font-size: 1.3rem; font-weight: 700; line-height: 1.4; }
+h5 { font-size: 1.2rem; font-weight: 600; }
+h6 { font-size: 1.1rem; font-weight: 600; }
+p  { font-size: 1.2rem; line-height: 1.8; }
+   p { font-size: 1.2rem; line-height: 1.8; text-align: justify; hyphens: auto; -webkit-hyphens: auto; word-spacing: -0.5px; }
+}
+  /* Larger nav links, labels, small text */
+  @layer utilities {
+  .text-sm   { font-size: 1rem;    }
+  .text-xs   { font-size: 0.9rem;  }
+  .text-base { font-size: 1.1rem;  }
+  .text-lg   { font-size: 1.25rem; }
+  .text-xl   { font-size: 1.45rem; }
+  .text-2xl  { font-size: 1.75rem; }
+  .text-3xl  { font-size: 2.1rem;  }
+  .text-4xl  { font-size: 2.5rem;  }
+  .text-5xl  { font-size: 3rem;    }
+  .text-6xl  { font-size: 3.7rem;  }
+}
+
+
+
+@layer utilities {
+  .bg-gradient-primary { background: var(--gradient-primary); }
+  .bg-gradient-hero    { background: var(--gradient-hero); }
+  .bg-gradient-card    { background: var(--gradient-card); }
+
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .shadow-soft { box-shadow: var(--shadow-md); }
+
+  .animate-fade-in    { animation: fadeIn 0.8s ease-out forwards; }
+  .animate-slide-up   { animation: slideUp 0.8s ease-out forwards; }
+  .animate-slide-down { animation: slideDown 0.8s ease-out forwards; }
+  .animate-slide-left { animation: slideLeft 0.8s ease-out forwards; }
+  .animate-slide-right{ animation: slideRight 0.8s ease-out forwards; }
+  .animate-scale-in   { animation: scaleIn 0.8s ease-out forwards; }
+  .animate-bounce-in  { animation: bounceIn 1s ease-out forwards; }
+  .animate-float      { animation: float 3s ease-in-out infinite; }
+  .animate-pulse-glow { animation: pulseGlow 2s ease-in-out infinite; }
+
+  .animate-gradient-border {
+    position: relative;
+    background: linear-gradient(60deg,#ffffff,#ffffff,#ffffff,#ffffff);
+    background-size: 400% 400%;
+    animation: gradientBorder 4s ease infinite;
+  }
+  .animate-gradient-border::before {
+    content:'';
+    position:absolute;inset:0;
+    border-radius:inherit;padding:4px;
+    background:linear-gradient(60deg,#ffffff,#ffffff,#ffffff,#ffffff);
+    background-size:400% 400%;
+    animation:gradientBorder 4s ease infinite;
+    -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+    filter:blur(12px) brightness(1.5);
+    opacity:0.9;
+  }
+
+  .hover-lift { transition: var(--transition-smooth); }
+  .hover-lift:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+  .hover-glow { transition: var(--transition-smooth); }
+  .hover-glow:hover { box-shadow: var(--shadow-glow); transform: translateY(-2px); }
+
+  .glass      { background:rgba(255,255,255,0.1); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.2); }
+  .glass-dark { background:rgba(0,0,0,0.1);       backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.1); }
+
+  .text-responsive-xl { @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl; }
+  .text-responsive-lg { @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl; }
+  .text-responsive-md { @apply text-lg sm:text-xl md:text-2xl; }
+
+  .loading-dots::after { content:''; animation:loadingDots 1.5s infinite; }
+  .loading-pulse       { animation:loadingPulse 1.5s ease-in-out infinite; }
+}
+
+/* ── Keyframes ── */
+@keyframes fadeIn    { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+@keyframes slideUp   { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
+@keyframes slideDown { from{opacity:0;transform:translateY(-40px)} to{opacity:1;transform:translateY(0)} }
+@keyframes slideLeft { from{opacity:0;transform:translateX(40px)} to{opacity:1;transform:translateX(0)} }
+@keyframes slideRight{ from{opacity:0;transform:translateX(-40px)} to{opacity:1;transform:translateX(0)} }
+@keyframes scaleIn   { from{opacity:0;transform:scale(0.9)} to{opacity:1;transform:scale(1)} }
+@keyframes bounceIn  { 0%{opacity:0;transform:scale(0.3)} 50%{opacity:1;transform:scale(1.05)} 70%{transform:scale(0.9)} 100%{opacity:1;transform:scale(1)} }
+@keyframes float     { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+@keyframes pulseGlow { 0%,100%{box-shadow:0 0 20px hsl(168 64% 25% / 0.3)} 50%{box-shadow:0 0 40px hsl(168 64% 25% / 0.6)} }
+@keyframes gradientBorder { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+@keyframes loadingDots { 0%,20%{content:''} 40%{content:'.'} 60%{content:'..'} 80%,100%{content:'...'} }
+@keyframes loadingPulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+
+/* ── Carousel / scroll ── */
+@keyframes scroll         { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+@keyframes scroll-reverse { 0%{transform:translateX(-100%)} 100%{transform:translateX(0)} }
+@keyframes scroll-testimonials { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+.animate-scroll              { animation:scroll 30s linear infinite; }
+.animate-scroll-reverse      { animation:scroll-reverse 30s linear infinite; }
+.animate-scroll-testimonials { animation:scroll-testimonials 40s linear infinite; }
+.animate-scroll:hover,
+.animate-scroll-reverse:hover { animation-play-state:paused; }
+.pause-animation:hover        { animation-play-state:paused; }
+
+/* ── Responsive ── */
+@media (max-width:640px)  { .container{ @apply px-4; } .text-responsive-xl{ line-height:1.1; } }
+@media (max-width:768px)  { .animate-slide-up,.animate-slide-down,.animate-slide-left,.animate-slide-right{ animation-duration:0.6s; } }
+@media print              { .no-print{ display:none !important; } }
+
+/* ── Prose ── */
+.prose { color:hsl(var(--foreground)); max-width:65ch; }
+.prose :where(p):not(:where([class~="not-prose"]*))          { margin-top:1.25em; margin-bottom:1.25em; line-height:1.75; font-size:1rem; }
+.prose :where([class~="lead"]):not(:where([class~="not-prose"]*)) { color:hsl(var(--muted-foreground)); font-size:1.15em; line-height:1.6; margin-top:1.2em; margin-bottom:1.2em; }
+.prose :where(a):not(:where([class~="not-prose"]*))          { color:hsl(var(--primary)); text-decoration:underline; font-weight:500; }
+.prose :where(strong):not(:where([class~="not-prose"]*))     { color:hsl(var(--foreground)); font-weight:600; }
+.prose :where(ol):not(:where([class~="not-prose"]*)),
+.prose :where(ul):not(:where([class~="not-prose"]*))         { margin-top:1.25em; margin-bottom:1.25em; padding-left:1.625em; }
+.prose :where(ol):not(:where([class~="not-prose"]*))         { list-style-type:decimal; }
+.prose :where(ul):not(:where([class~="not-prose"]*))         { list-style-type:disc; }
+.prose :where(li):not(:where([class~="not-prose"]*))         { margin-top:0.5em; margin-bottom:0.5em; padding-left:0.375em; }
+.prose :where(h1):not(:where([class~="not-prose"]*))         { color:hsl(var(--foreground)); font-weight:800; font-size:2.25em; margin-top:0; margin-bottom:0.8em; line-height:1.1; }
+.prose :where(h2):not(:where([class~="not-prose"]*))         { color:hsl(var(--foreground)); font-weight:700; font-size:1.875em; margin-top:2em; margin-bottom:1em; line-height:1.3; }
+.prose :where(h3):not(:where([class~="not-prose"]*))         { color:hsl(var(--foreground)); font-weight:600; font-size:1.5em; margin-top:1.6em; margin-bottom:0.6em; line-height:1.6; }
+.prose :where(h4):not(:where([class~="not-prose"]*))         { color:hsl(var(--foreground)); font-weight:600; font-size:1.25em; margin-top:1.5em; margin-bottom:0.5em; line-height:1.5; }
+.prose :where(img):not(:where([class~="not-prose"]*))        { margin-top:2em; margin-bottom:2em; border-radius:0.5rem; }
+.prose :where(blockquote):not(:where([class~="not-prose"]*)) { font-weight:500; font-style:italic; color:hsl(var(--foreground)); border-left-width:0.25rem; border-left-color:hsl(var(--primary)); margin-top:1.6em; margin-bottom:1.6em; padding-left:1em; }
+.prose :where(code):not(:where([class~="not-prose"]*))       { color:hsl(var(--foreground)); font-weight:600; font-size:0.875em; background-color:hsl(var(--muted)); padding:0.25em 0.4em; border-radius:0.25rem; }
+.prose :where(pre):not(:where([class~="not-prose"]*))        { color:hsl(var(--foreground)); background-color:hsl(var(--muted)); overflow-x:auto; font-size:0.875em; line-height:1.7; margin-top:1.7em; margin-bottom:1.7em; border-radius:0.5rem; padding:1.1em 1.4em; }
+.prose :where(pre code):not(:where([class~="not-prose"]*))   { background-color:transparent; border-width:0; border-radius:0; padding:0; font-weight:400; color:inherit; font-size:inherit; }
+.prose :where(table):not(:where([class~="not-prose"]*))      { width:100%; table-layout:auto; text-align:left; margin-top:2em; margin-bottom:2em; font-size:0.9em; line-height:1.7; }
+.prose :where(thead):not(:where([class~="not-prose"]*))      { border-bottom-width:1px; border-bottom-color:hsl(var(--border)); }
+.prose :where(thead th):not(:where([class~="not-prose"]*))   { color:hsl(var(--foreground)); font-weight:600; vertical-align:bottom; padding:0.4em 0.6em; }
+.prose :where(tbody tr):not(:where([class~="not-prose"]*))   { border-bottom-width:1px; border-bottom-color:hsl(var(--border)); }
+.prose :where(tbody td):not(:where([class~="not-prose"]*))   { vertical-align:baseline; padding:0.4em 0.6em; }
+.prose :where(hr):not(:where([class~="not-prose"]*))         { border-color:hsl(var(--border)); border-top-width:1px; margin-top:3em; margin-bottom:3em; }
+
+.prose-lg { font-size:1.125rem; line-height:1.8; }
+.prose-lg :where(p):not(:where([class~="not-prose"]*))  { margin-top:1.3em; margin-bottom:1.3em; }
+.prose-lg :where(h2):not(:where([class~="not-prose"]*)) { font-size:2em; margin-top:1.5em; margin-bottom:0.9em; line-height:1.3; }
+.prose-lg :where(h3):not(:where([class~="not-prose"]*)) { font-size:1.7em; margin-top:1.7em; margin-bottom:0.7em; line-height:1.4; }

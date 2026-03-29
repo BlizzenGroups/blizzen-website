@@ -1,0 +1,27 @@
+# Admin Credentials
+# Admin Account 1
+VITE_ADMIN_USERNAME_1=Blizzen creations T&P
+VITE_ADMIN_PASSWORD_1=Blizzen@1401
+
+# Admin Account 2
+VITE_ADMIN_USERNAME_2=Blizzen creation T&P
+VITE_ADMIN_PASSWORD_2=Blizzen@2512
+
+# Fallback admin (legacy)
+VITE_ADMIN_USERNAME=strucureo
+VITE_ADMIN_PASSWORD=admin@123#
+
+# API Configuration
+VITE_API_URL=http://localhost:5001
+
+# MongoDB
+MONGODB_URI=mongodb+srv://tagverseiio_db_user:XQRqfevdIMj0ptfD@blizzencreation.nkmskwi.mongodb.net/blizzen_launchpad?retryWrites=true&w=majority
+
+
+# Google Maps
+VITE_GOOGLE_MAPS_API_KEY=
+
+# Google Apps Script URL for enquiry form
+VITE_GOOGLE_SCRIPT_URL=
+
+PORT=5001
